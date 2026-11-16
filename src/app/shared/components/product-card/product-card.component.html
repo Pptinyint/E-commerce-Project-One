@@ -1,0 +1,14 @@
+<a class="product-card" [routerLink]="['/product', product().id]">
+  <div class="image-wrap">
+    <img [src]="product().image" [alt]="product().title" loading="lazy" />
+  </div>
+  <div class="card-body">
+    <span class="category">{{ product().category }}</span>
+    <h3 class="title">{{ product().title }}</h3>
+    <p class="rating">★ {{ product().rating.rate | number: '1.1-1' }} ({{ product().rating.count }})</p>
+    <div class="card-footer">
+      <span class="price">{{ product().price | currency: 'USD' }}</span>
+      <button type="button" class="btn btn-primary btn-sm" (click)="addToCart($event)">Add to cart</button>
+    </div>
+  </div>
+</a>
